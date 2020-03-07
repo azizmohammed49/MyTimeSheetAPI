@@ -1,0 +1,8 @@
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\bin\Debug\netstandard2.0\TimeSheetDAL.deps.json
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\bin\Debug\netstandard2.0\TimeSheetDAL.dll
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\bin\Debug\netstandard2.0\TimeSheetDAL.pdb
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\obj\Debug\netstandard2.0\TimeSheetDAL.csproj.CoreCompileInputs.cache
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\obj\Debug\netstandard2.0\TimeSheetDAL.AssemblyInfoInputs.cache
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\obj\Debug\netstandard2.0\TimeSheetDAL.AssemblyInfo.cs
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\obj\Debug\netstandard2.0\TimeSheetDAL.dll
+C:\Users\ABDUL AZIZ\source\repos\Timesheets.API\TimeSheetDAL\obj\Debug\netstandard2.0\TimeSheetDAL.pdb

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TimeSheetDAL.BO;
 using TimeSheetDAL.Models;
+using TimeSheetDAL.ViewModel;
 
 namespace TimeSheetDAL.DO
 {
@@ -12,7 +13,7 @@ namespace TimeSheetDAL.DO
         void Insert(Employee D);
         void Update(Employee D);
         void Delete(int did);
-        IEnumerable<Employee> GetEmployees();
+        IEnumerable<TaskViewModel> GetEmployees();
         Employee GetEmployeeByEmpId(int empId);
     }
     public class EmployeeDb : IEmployeeDb, IDisposable
@@ -37,14 +38,30 @@ namespace TimeSheetDAL.DO
 
         public Employee GetEmployeeByEmpId(int empId)
         {
-            var T = DbContext.Employees.Find(empId);
-            return T;
+            var emp = DbContext.Employees
+                .Include(e => e.Task)
+                .FirstOrDefault(m => m.EmpId == empId);
+            return emp;
         }
 
-        public IEnumerable<Employee> GetEmployees()
+        public IEnumerable<TaskViewModel> GetEmployees()
         {
-            var emp = DbContext.Employees.Include(e => e.Task);
-            return emp.ToList();
+            List<TaskViewModel> empModels = new List<TaskViewModel>();
+            var emp = DbContext.Employees.Include(e => e.Task).AsNoTracking();
+            foreach (var item in emp)
+            {
+                TaskViewModel model = new TaskViewModel()
+                {
+                    EmpID = item.EmpId,
+                    EmpName = item.Name,
+                    Code = item.Code,
+                    TaskName = item.Task.Name,
+                    Description = item.Task.Description
+
+                };
+                empModels.Add(model);
+            }
+            return empModels;
         }
 
         public void Insert(Employee E)
